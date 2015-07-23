@@ -1,9 +1,25 @@
 // Starting point
+var Comment = React.createClass({
+  render: function() {
+		var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
+    return (
+      <div className="comment">
+        <h2 className="commentAuthor">
+          {this.props.author}
+        </h2>
+        <span dangerouslySetInnerHTML={{__html: rawMarkup}} />
+      </div>
+    );
+  }
+});
+
 var CommentList = React.createClass({
   render: function() {
     return (
       <div className="commentList">
-        Hello, world! I am a CommentList.
+        <Comment author="Nil">This is one comment</Comment>
+        <Comment author="Dan">This is *another* comment</Comment>
+        <Comment author="Evan">This is *another* *another* comment</Comment>
       </div>
     );
   }
