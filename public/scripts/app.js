@@ -99,10 +99,10 @@ var CommentForm = React.createClass({
   },
   render: function() {
     return (
-      <form className="commentForm well" onSubmit={this.handleSubmit}>
+      <form className="commentForm" onSubmit={this.handleSubmit}>
         <input type="text" className="form-control" placeholder="Your name" ref="author" />
         <input type="text" className="form-control" placeholder="Say something..." ref="text" />
-        <input className="btn btn-default" type="submit" value="Post" />
+        <input className="btn btn-success pull-right" type="submit" value="Post" />
       </form>
     );
   }
